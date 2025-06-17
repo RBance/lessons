@@ -37,6 +37,52 @@
       border-radius: 8px;
     }
 
+
+    .geo-animation {
+      position: relative;
+      height: 100px;
+      margin-bottom: 2rem;
+      overflow: hidden;
+      background: transparent;
+    }
+
+    .circle {
+      width: 20px;
+      height: 20px;
+      background-color: #aaa;
+      opacity: 0.3;
+      border-radius: 50%;
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      animation: floatUp 5s infinite ease-in-out;
+    }
+
+    .circle.delay1 {
+      left: 40%;
+      animation-delay: 1s;
+    }
+
+    .circle.delay2 {
+      left: 60%;
+      animation-delay: 2s;
+    }
+
+    @keyframes floatUp {
+      0% {
+        transform: translateY(0) scale(1);
+        opacity: 0.3;
+      }
+      50% {
+        transform: translateY(-40px) scale(1.2);
+        opacity: 0.6;
+      }
+      100% {
+        transform: translateY(-80px) scale(1);
+        opacity: 0;
+      }
+    }
+    
     footer {
       text-align: center;
       padding: 1rem;
@@ -79,7 +125,11 @@
   <h2>Get in Touch</h2>
   <p>For all enquiries you can email me at <a href="mailto:rob27@cantab.ac.uk">rob27@cantab.ac.uk</a> or call/text 07948 620483.</p>
 </section>
-
+<div class="geo-animation">
+  <div class="circle"></div>
+  <div class="circle delay1"></div>
+  <div class="circle delay2"></div>
+</div>
 <footer>
   <p>&copy; 2025 Reuben Bance | Piano Lessons</p>
 </footer>
